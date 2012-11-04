@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
+        <title><?php echo($title); ?> - Site Name</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
@@ -34,9 +34,9 @@
                     <a class="brand" href="index.php">Site Name</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
-                            <li><a href="index.php">Home</a></li>
-                            <li><a href="?page=about">About</a></li>
-                            <li><a href="?page=contact">Contact</a></li>
+                            <li <?php if($page == "home"){?> class="active" <?php } ?>><a href="index.php">Home</a></li>
+                            <li <?php if($page == "about"){?> class="active" <?php } ?>><a href="?page=about">About</a></li>
+                            <li <?php if($page == "contact"){?> class="active" <?php } ?>><a href="?page=contact">Contact</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>
