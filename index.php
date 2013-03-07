@@ -1,5 +1,9 @@
 <?php
 include('config.php');
+include('dbinit.php');
+
+if(!isset($_GET['func']))
+{
 $page = $_GET['page'];
 
 //Page logic
@@ -28,4 +32,20 @@ else
 }
 
 include('view/footer.phtml');
+}
+
+if(isset($_GET['func']))
+{
+	$func = $_GET['func'];
+	$func = strip_tags($func);
+	
+	if(!file_exists("func/" . $func . ".php"))
+	{
+		header('location: index.php?page=404');
+	}
+	else
+	{
+		include('func/' . $page . '.php');
+	}	
+}
 ?>
